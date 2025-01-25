@@ -1,101 +1,96 @@
 import Image from "next/image";
-
+import Link from "next/link";
+import { Wine } from "./components/Icon/WIne";
+import { Party } from "./components/Icon/Party";
+import { Form } from "./components/Form/Form";
 export default function Home() {
+  console.log("Hello from home");
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+    <div className="mx-auto relative z-10">
+      <div className="flex laptop:flex-row flex-col justify-center gap-8 ">
+        <div className="flex flex-col gap-2 text-center m-auto">
+          <h1 className="font-Pacifico text-6xl text-mainOlive">Мария</h1>
+          <h1 className="font-Pacifico text-6xl text-mainOlive">и</h1>
+          <h1 className="font-Pacifico text-6xl text-mainOlive">Мирослав</h1>
+          <h2 className="font-Pacifico text-xl pt-5 text-mainOlive">
+            13.09.2025
+          </h2>
+          <Link
+            className="text-center "
+            href="https://maps.app.goo.gl/EpRCJr8f1gNEz6v67"
             target="_blank"
-            rel="noopener noreferrer"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            <h2 className=" text-base underline text-mainOlive">
+              Мавруда Гардън, Ягодовско шосе╰┈➤
+            </h2>
+          </Link>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+        <Image
+          src="/us.png"
+          alt="us"
+          className="mx-auto"
+          objectFit="cover"
+          width={400}
+          height={300}
+        />
+      </div>
+      <p className=" absolute top-2 font-Pacifico text-base text-mainOlive">
+        Save the date
+      </p>
+      <h2 className="fade-in font-Pacifico py-5 text-5xl text-center text-mainOlive">
+        Нашият сватбен ден
+      </h2>
+      <div className="flex justify-center even:rigth[-50%]">
+        <div className="fade-left  flex flex-col justify-center">
+          <h2 className=" font-Pacifico pt-5 text-xl text-center text-mainOlive">
+            Сватбена церемония
+          </h2>
+          <p className=" animate-wiggle font-Pacifico text-base text-center text-lightBlack">
+            18:30
+          </p>
+          <div className="mx-auto my-10">
+            <Wine />
+          </div>
+          <h2 className=" font-Pacifico pt-5 text-xl text-center text-mainOlive">
+            Нека партито започне
+          </h2>
+          <p className=" animate-wiggle font-Pacifico text-base text-center text-lightBlack">
+            20:00
+          </p>
+        </div>
+        <svg
+          width="224"
+          height="528"
+          viewBox="0 0 14824 30528"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+          <path
+            d="M6633 0C6633 1949.5 6633 4992 6633 4992C6633 4992 10048.1 5087 11177 6592C13102.5 9159.03 6311.19 10432.9 3369 9152C1634.48 8396.87 41 5632 41 5632C41 5632 3008.87 6362.18 4841 7040C7639.99 8075.53 11689 10432 11689 10432C11689 10432 12402.9 10924.3 12777 11328C15416 14176 6503.61 18034.6 3689 15360C2724.48 14443.5 2356.21 13655.4 2089 12352C1313.26 8568 7758.67 14457.3 11177 16256C12395.1 16897 13267.1 17019.3 14249 17984C17774.2 21447.5 3369 24064 2793 23360C2217 22656 246.381 19061.5 2089 18368C3545.51 17819.9 4589.12 19123.9 5545 20352C6472.86 21544.1 6633 22037.3 6633 24064C6633 26090.7 6633 30220.8 6633 30528"
+            stroke="black"
+            strokeWidth="40"
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        </svg>
+
+        <div className=" fade-right flex flex-col justify-center">
+          <div className="mx-auto my-10">
+            <Image src='/rings.png' width={50} height={50} alt="rings"/>
+          </div>
+          <h2 className=" font-Pacifico pt-5 text-xl text-center text-mainOlive">
+            Сватбена церемония
+          </h2>
+          <p className=" animate-wiggle font-Pacifico text-base text-center text-lightBlack">
+            18:30
+          </p>
+          <div className="mx-auto my-10">
+            <Party />
+          </div>
+        </div>
+      </div>
+      <h2 className="font-Pacifico my-8 py-5 text-5xl text-center text-mainOlive">
+        Ще присъствате ли на сватбата?
+      </h2>
+      <Form />
     </div>
   );
 }
