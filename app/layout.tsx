@@ -29,7 +29,7 @@ export default function RootLayout({
       >
         {" "}
         <div
-          className="absolute inset-0 bg-[url('/background2.png')] bg-contain opacity-30 pointer-events-none"
+          className="absolute inset-0 bg-[url('/background4.png')]  bg-cover pointer-events-none"
           aria-hidden="true"
         ></div>
         {children}

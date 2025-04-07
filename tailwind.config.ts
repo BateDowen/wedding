@@ -30,6 +30,7 @@ export default {
       fontFamily: {
         Pacifico: ['Pacifico', 'sans-serif'],
         Roboto: ['Roboto', 'sans-serif'],
+        Merriweather: ['Merriweather', 'sans-serif'],
       },
       keyframes: {
         wiggle: {

@@ -3,16 +3,17 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* --background: #ffffff;
+  --foreground: #171717; */
+  color-scheme: light;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 @layer utilities{
   /* .heading {
     @apply font-sans 
@@ -44,38 +45,123 @@
   font-weight: 100; 
   font-style: normal;
 }
+@font-face {
+  font-family: 'Merriweather';
+  src: url('/fonts/merriweather/Merriweather-Light.otf') ;
+  font-weight: 300; 
+  font-style: normal;
+}
 body {
-  color: var(--foreground);
-  background: var(--background);
+  /* color: var(--foreground);
+  background: var(--background); */
   padding: 30;
   font-family: 'Roboto', sans-serif;
+  overflow-x: hidden;
+
+}
+.ceremony-text {
+ @apply font-Pacifico pt-5 phone:text-2xl text-xl text-center text-mainOlive
+  
+}
+
+.jump-from-right {
+  transform: translateX(200px);
+  opacity: 0;
+  transition: transform 1.5s ease-in-out, opacity 1.5s ease-in-out;
+}
+
+.jump-from-right.visible {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.jump-from-left{
+  transform: translateX(-200px);
+  opacity: 0;
+  transition: transform 1.5s ease-in-out, opacity 1.5s ease-in-out;
+}
+
+.jump-from-left.visible {
+  transform: translateX(0);
+  opacity: 1;
+}
 
 
+.reveal {
+  animation: reveal 2s ease-in;
+}
+@keyframes reveal{
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 .fade-in {
     
-  animation: fade-in both;
-  animation-timeline: view(40% 30%);
+  animation: fade-in ease-in-out both;
+  animation-timeline: view(20% 10%);
+
 }
 @keyframes fade-in{
-  from { opacity: 0;transform: translateY(200px); scale: .3;}
+  from { opacity: 0;transform: translateY(200px); scale: .1;}
   to {opacity: 1;transform: translateY(0); scale: 1; }
 }
 .fade-left {
     
-  animation: fade-left both;
+  animation: fade-left 5s ease-in-out both;
+  /* animation-timeline: view(); */
   animation-timeline: view(20% 10%);
+  animation-range: entry 50% cover 30%;
+  clip-path: inset(0  0  0 50% );
+
 }
 @keyframes fade-left{
-  from { transform: translateX(-300px); scale: .3;}
-  to {transform: translateX(30px); scale: 1; }
+  from {
+    clip-path: inset(0  0  0 100%); 
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5; /* Gradually fade in */
+    clip-path: inset(0  0  0 50%);
+  }
+  to {
+    clip-path: inset(0  0 0 0%); /* Fully revealed */
+    opacity: 1;
+  }
 }
 .fade-right {
     
-  animation: fade-right both;
+  animation: fade-right 5s ease-in-out both;
+  /* animation-timeline: view(); */
   animation-timeline: view(20% 10%);
+  animation-range: entry 50% cover 30%;
+  clip-path: inset(0 50% 0 0);
 }
 @keyframes fade-right{
-  from { transform: translateX(300px); scale: .3;}
-  to {transform: translateX(-30px); scale: 1; }
+  from {
+    clip-path: inset(0 100% 0 0); /* Hidden on the right */
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5; /* Gradually fade in */
+    clip-path: inset(0 50% 0 0);
+
+  }
+  to {
+    clip-path: inset(0 0% 0 0); /* Fully revealed */
+    opacity: 1;
+
+  }
+
+}
+
+.typing-animation {
+  animation: typing-animation 1.5s steps(20) infinite alternate-reverse;
+}
+@keyframes typing-animation {
+  from {
+    width: 0ch;
+  }
 }
