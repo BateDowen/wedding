@@ -15,7 +15,7 @@ export const Form: React.FC<FormProps> = ({ setHideImage }) => {
   const [loading, setLoading] = useState<true | false>(false);
   const [completed, setCompleted] = useState<true | false>(false);
 
-  const handleCheckboxChange = (name: string, handleFn: Function) => {
+  const handleCheckboxChange = (name: string, handleFn: React.Dispatch<React.SetStateAction<string>>) => {
     handleFn((prev: string) => (prev === name ? "" : name));
   };
 
@@ -27,7 +27,7 @@ export const Form: React.FC<FormProps> = ({ setHideImage }) => {
     const email = formData.get("Email") as string;
     const companionName = formData.get("Име на придружителя") as string;
     setLoading(true);
-    const responce = await saveGuest({
+    await saveGuest({
       firstName,
       lastName,
       email,

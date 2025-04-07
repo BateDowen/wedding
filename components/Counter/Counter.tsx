@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 
 const Counter = () => {
-  const [endTime, setEndTime] = useState(
+  const [endTime] = useState(
     new Date("September 13, 2025 18:30:00").getTime()
   );
   const [days, setDays] = useState<number>(0);
