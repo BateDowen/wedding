@@ -1,8 +1,9 @@
 import mongoose, { Schema, model, models } from "mongoose";
 
 
-mongoose.connect(process.env.MONGO as string);
-mongoose.Promise = global.Promise //ensures that Mongoose uses JavaScript’s built-in Promise implementation instead.;
+// mongoose.connect(process.env.MONGO as string);
+
+// mongoose.Promise = global.Promise //ensures that Mongoose uses JavaScript’s built-in Promise implementation instead.;
 
 const guest = new Schema({
   firstName: String,
