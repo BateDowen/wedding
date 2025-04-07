@@ -1,4 +1,3 @@
-const BASE_URL = process.env.FIREBASE_BASE_URL;
 interface Guest {
   firstName: string;
   lastName: string;

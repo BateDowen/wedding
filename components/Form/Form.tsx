@@ -1,5 +1,5 @@
 "use client";
-import React, { FormEvent, useActionState, useState } from "react";
+import React, { FormEvent,  useState } from "react";
 import { Input } from "../Input/Input";
 import { Checkbox } from "../Input/Checkbox";
 import { saveGuest } from "@/app/utils/api";
@@ -7,7 +7,6 @@ type FormProps = {
   setHideImage: React.Dispatch<React.SetStateAction<boolean>>;
 };
 export const Form: React.FC<FormProps> = ({ setHideImage }) => {
-  // const [message, submitAction, isPendindig] = useActionState()
   const [isComing, setIsComing] = useState<string>("Да");
   const [menuType, setMenuType] = useState<string>("Месно");
   const [companionMenuType, setCompanionMenuType] = useState<string>("Месно");
@@ -78,20 +77,20 @@ export const Form: React.FC<FormProps> = ({ setHideImage }) => {
                 type="text"
                 label="Име"
                 name="Име"
-                onChangeValue={() => {}}
+                // onChangeValue={() => {}}
               />
               <Input
                 type="text"
                 label="Фамилия"
                 name="Фамилия"
-                onChangeValue={() => {}}
+                // onChangeValue={() => {}}
               />
             </div>
             <Input
               type="email"
               label="Email"
               name="Email"
-              onChangeValue={() => {}}
+              // onChangeValue={() => {}}
             />
             <div className=" border-b-[1px] border-b-white py-2">
               <p className="text-white text-left mt-3 font-Merriweather ">
@@ -132,7 +131,7 @@ export const Form: React.FC<FormProps> = ({ setHideImage }) => {
                     type="text"
                     label="Име на придружителя:"
                     name="Име на придружителя"
-                    onChangeValue={() => {}}
+                    // onChangeValue={() => {}}
                   />
                   <div className=" border-b-[1px] border-b-white py-2">
                     <p className="text-white text-left mt-3 font-Merriweather ">

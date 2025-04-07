@@ -1,16 +1,5 @@
 import type { Metadata } from "next";
-import localfont from "next/font/local";
 import "./globals.css";
-import Image from "next/image";
-
-// const pacifico = localfont({
-//   src: [{
-//     path: './fonts/Pacifico/Pacifico-Regular.ttf',
-//     weight: '400',
-//     style: 'normal'
-//   }],
-//   variable: '--font-Pacifico'
-// })
 
 export const metadata: Metadata = {
   title: "M&M",

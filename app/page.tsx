@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { Wine } from "../components/Icon/WIne";
 import { Party } from "../components/Icon/Party";
-import { Form } from "../components/Form/Form";
 import Counter from "../components/Counter/Counter";
 import ShowAnimated from "@/components/ShowAniamted/ShowAnimated";
 import BestManAndForm from "@/components/BestManAndForm/BestManAndForm";
