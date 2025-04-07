@@ -19,7 +19,7 @@ export default function RootLayout({
         {" "}
         <div
           className="absolute inset-0  bg-cover pointer-events-none"
-          style={{ backgroundImage: "url('/background4.png')" }}
+          style={{ backgroundImage: "url('/background4.PNG')" }}
           aria-hidden="true"
         ></div>
         {children}
