@@ -1,0 +1,13 @@
+name: Keep Render Server Awake
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'  # Every 15 minutes (UTC time)
+  workflow_dispatch:        # Allows you to trigger it manually
+
+jobs:
+  ping-server:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Curl your server
+        run: curl -s https://maria-miroslav-wedding.onrender.com
