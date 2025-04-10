@@ -2,7 +2,7 @@ name: Keep Render Server Awake
 
 on:
   schedule:
-    - cron: '*/15 7-22 * * *' # Every 15 minutes (UTC time)
+    - cron: '*/15 10-01 * * *' # Every 15 minutes (UTC time)
   # workflow_dispatch:        # Allows you to trigger it manually
 
 jobs:
