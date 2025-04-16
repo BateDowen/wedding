@@ -7,14 +7,14 @@ type PageProps = {
 };
 type Guest = {
   _id: string;
-  firstName?: String;
-  lastName?: String;
-  email?: String;
-  hotel?: Boolean;
-  isComing?: String;
-  companionName?: String;
-  companionMenuType?: String;
-  menuType?: String;
+  firstName?: string;
+  lastName?: string;
+  email?: string;
+  hotel?: boolean;
+  isComing?: string;
+  companionName?: string;
+  companionMenuType?: string;
+  menuType?: string;
 };
 const page = async ({ searchParams }: PageProps) => {
   const secret = searchParams.secret ?? "";
