@@ -1,9 +1,7 @@
 import React from "react";
 import { allGuests } from "../utils/api";
 type PageProps = {
-  searchParams: {
-    [key: string]: string | undefined;
-  };
+  [key: string]: string | undefined;
 };
 type Guest = {
   _id: string;
@@ -16,7 +14,7 @@ type Guest = {
   companionMenuType?: string;
   menuType?: string;
 };
-const page = async ({ searchParams }: PageProps) => {
+const page = async ({ searchParams }: { searchParams: PageProps }) => {
   const secret = searchParams.secret ?? "";
   const guests = await allGuests(secret);
   return (
