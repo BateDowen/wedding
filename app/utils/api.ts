@@ -25,7 +25,7 @@ export const saveGuest = async (guest: Guest) => {
 
 export const allGuests = async (secret: string) => {
   const responce = await fetch(
-    `${process.env.BASE_URL}/api/Guests?secret=${secret}`
+    `${process.env.NEXT_PUBLIC_BASE_URL}/api/Guests?secret=${secret}`
   );
   const data = await responce.json();
   return data
