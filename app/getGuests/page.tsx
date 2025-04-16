@@ -1,7 +1,7 @@
 import React from "react";
 import { allGuests } from "../utils/api";
 type PageProps = {
-  [key: string]: string | undefined;
+  searchParams?: Record<string, string | undefined>;
 };
 type Guest = {
   _id: string;
@@ -14,8 +14,8 @@ type Guest = {
   companionMenuType?: string;
   menuType?: string;
 };
-const page = async ({ searchParams }: { searchParams: PageProps }) => {
-  const secret = searchParams.secret ?? "";
+const Page = async ({ searchParams }: PageProps ) => {
+  const secret = searchParams?.secret ?? "";
   const guests = await allGuests(secret);
   return (
     <div className="font-Pacifico relative z-10 my-8 py-5 text-4xl  text-center text-mainOlive">
@@ -62,4 +62,4 @@ const page = async ({ searchParams }: { searchParams: PageProps }) => {
   );
 };
 
-export default page;
+export default Page;
