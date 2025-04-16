@@ -8,6 +8,7 @@ interface Guest {
   companionMenuType: string;
   menuType: string;
 }
+
 export const saveGuest = async (guest: Guest) => {
   const responce = await fetch("/api/Guests", {
     method: "POST",
@@ -17,7 +18,15 @@ export const saveGuest = async (guest: Guest) => {
     },
   });
   if (!responce.ok) {
-    return 'Could not save guest :('
+    return "Could not save guest :(";
   }
-  return responce.json()
+  return responce.json();
+};
+
+export const allGuests = async (secret: string) => {
+  const responce = await fetch(
+    `${process.env.BASE_URL}/api/Guests?secret=${secret}`
+  );
+  const data = await responce.json();
+  return data
 };
