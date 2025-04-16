@@ -1,8 +1,7 @@
 import React from "react";
 import { allGuests } from "../utils/api";
-type PageProps = {
-  searchParams?: Record<string, string | undefined>;
-};
+type SearchParams = Promise<{ [key: string]: string  | undefined }>
+ 
 type Guest = {
   _id: string;
   firstName?: string;
@@ -14,8 +13,9 @@ type Guest = {
   companionMenuType?: string;
   menuType?: string;
 };
-const Page = async ({ searchParams }: PageProps ) => {
-  const secret = searchParams?.secret ?? "";
+const Page = async (props :{ searchParams: SearchParams}) => {
+  const searchParams = await props.searchParams
+  const secret = searchParams.secret ?? '';
   const guests = await allGuests(secret);
   return (
     <div className="font-Pacifico relative z-10 my-8 py-5 text-4xl  text-center text-mainOlive">
